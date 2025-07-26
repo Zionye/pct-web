@@ -1,0 +1,18 @@
+@use 'element-plus.scss';
+@use 'element-transition.scss';
+
+html, body {
+  height: 100%;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+.page-content {
+  height: 100%;
+  flex: 1;
+  background-color: #fff;
+  padding: 24px 32px;
+  box-sizing: border-box;
+  border-radius: 4px;
+  box-sizing: border-box;
+}

@@ -1,0 +1,31 @@
+@forward "element-plus/theme-chalk/src/common/var.scss" with (
+  $menu: (
+    'item-height': 48px
+  ),
+  $header: (
+    'padding': 0,
+    'height': 60px
+  ),
+  $colors: (
+    'primary': (
+      'base': #3186FF
+    )
+  ),
+  $font-family: (
+    '': 'Helvetica Neue, Helvetica, PingFang SC, Hiragino Sans GB, Microsoft YaHei, Arial, sans-serif'
+  ),
+  $pagination: (
+    'button-height': 28px
+  ),
+  $tabs: (
+    'header-height': 36px
+  ),
+);
+
+$aside-width: 240px;
+$aside-collapse-width: 60px;
+$header-height: 60px;
+$top-subtime-height: 38px;
+$top-submenus-height: 50px;
+
+$el-menu-item-height: 48px;

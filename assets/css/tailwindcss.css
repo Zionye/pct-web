@@ -1,0 +1,9 @@
+/* // // 3. 加载 Tailwind
+// @import "tailwindcss" layer(base);
+
+// // 4. 加载 Tailwind 工具类
+// @import "tailwindcss/utilities" layer(utilities); */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
