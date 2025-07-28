@@ -43,9 +43,6 @@ definePageMeta({
 })
 
 import { Swiper, SwiperSlide } from 'swiper/vue'
-// import 'swiper/css'
-// import 'swiper/css/pagination'
-// import 'swiper/css/mousewheel'
 
 const onSlideChange = (swiper) => {
   console.log('当前页', swiper.activeIndex)
