@@ -5,6 +5,16 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
 
   ssr: true, // 开启 SSR
+  target: 'static', // 可省略，Nuxt3 默认是 'server'，但在 generate 会被 override
+  // 网站部署路径，如果部署在子路径下要配置此项
+  app: {
+    // 如果你的网站部署在 https://example.com/my-site/ ,那这里就写 '/my-site/'，否则默认 '/'
+    baseURL: '/',
+  },
+  // 构建输出目录（默认是 .output/，但 generate 会用 dist/）
+  nitro: {
+    preset: 'static',
+  },
   
   modules: [
     '@nuxtjs/tailwindcss',

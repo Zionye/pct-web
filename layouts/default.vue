@@ -8,7 +8,8 @@
     <!-- <slot /> -->
      <el-container >
       <div class="nav-container">
-        <div>面包屑</div>
+        <!-- <div>面包屑</div> -->
+        <AppBreadcrumb />
       </div>
       <div class="fill-height">
         <el-scrollbar view-class="content-view">
