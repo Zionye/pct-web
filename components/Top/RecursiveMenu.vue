@@ -1,14 +1,15 @@
 <template>
   <!-- 当前层级菜单项 -->
   <el-row :gutter="20" class="menu-item">
-    <el-col class="mb-[7px]" :span="props.isChild? 24 : 12" v-for="item in menuData" :key="item.path">
+    <!-- <el-col class="mb-[7px]" :span="props.isChild? 24 : 12" v-for="item in menuData" :key="item.path"> -->
+    <el-col class="mb-[7px]" :span="props.isChild? 24 : 12" v-for="item in processedMenuData" :key="item.path">
       <!-- 无子菜单的普通项 -->
       <template v-if="!item.children?.length">
-        <nuxt-link 
-          :to="item.path" 
+        <nuxt-link
+          :to="item.fullPath" 
           class="menu-link"
           :class="{ 'active': isActive(item.path) }"
-        >
+          >
           <el-icon v-if="item.seoMeta?.icon" class="i-img">
             <component :is="getIconComponent(item.seoMeta.icon)" />
           </el-icon>
@@ -32,7 +33,7 @@
           >
             <TopRecursiveMenu 
               :menuData="item.children" 
-              :basePath="item.path"
+              :basePath="item.fullPath"
               :isChild="true"
             />
           </div>
@@ -45,6 +46,7 @@
 
 <script setup lang="">
 import { ArrowDown, CaretRight } from '@element-plus/icons-vue';
+import { useRouter } from 'vue-router';
 
 const  props = defineProps({
   menuData: {
@@ -59,7 +61,20 @@ const  props = defineProps({
     type: Boolean,
     default: false
   }
-})
+});
+
+const router = useRouter();
+// const openedMenus = ref([]);
+
+// 处理菜单数据，添加fullPath属性
+const processedMenuData = computed(() => {
+  return props.menuData.map(item => ({
+    ...item,
+    fullPath: props.basePath ? `${props.basePath}/${item.path}` : `/${item.path}`
+  }));
+});
+console.log('路由面板 props.menuData: ', props.menuData);
+console.log('processedMenuData: ', processedMenuData);
 
 // 创建icon图标映射方法
 const getIconComponent = (iconName) => {

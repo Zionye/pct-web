@@ -230,7 +230,7 @@ const MENU_ITEMS = [
             },
           },
           {
-            path: "eHub",
+            path: "ehub",
             name: "EHub",
             seoMeta: {
               title: "eHub",
@@ -276,7 +276,7 @@ const MENU_ITEMS = [
         ],
       },
       {
-        path: "vatRegime",
+        path: "vatregime",
         name: "VatRegime",
         seoMeta: {
           title: "Customs & VAT Regime",
@@ -443,7 +443,7 @@ const MENU_ITEMS = [
         },
         children: [
           {
-            path: "photoideogallery",
+            path: "photovideogallery",
             name: "PhotoVideoGallery",
             seoMeta: {
               title: "Photo & Video Gallery",
@@ -533,6 +533,14 @@ export const useNavigation = () => {
       }
     }
     return null;
+  };
+
+  // 在菜单中查找匹配的项
+  const findMenuItem = (menuItems, path) => {
+    return menuItems.find((item) => {
+      const itemPath = item.path.split("/").pop(); // 获取路径的最后一段
+      return itemPath === path;
+    });
   };
 
   return {

@@ -5,13 +5,13 @@
           <img :src="bgmenu" alt="">
 
           <div class="menu-modal__main">
-            {{ selectedMenu.seoMeta?.title || '' }}
+            <!-- {{ selectedMenu.seoMeta?.title || '' }} -->
 
-            <!-- 当前层级菜单项 -->
-             <TopRecursiveMenu :menuData="menuData" />
+            <!-- 当前层级(二级)菜单项 -->
+             <TopRecursiveMenu :menuData="menuData" :basePath="props.selectedMenu.path"/>
           </div>
         </div>
-        
+
       </div>
     </transition>
 </template>
@@ -25,7 +25,7 @@ const props = defineProps({
     default: () => ({})
   }
 });
-console.log('selectedMenu: ', props.selectedMenu);
+console.log('所选一级路由 selectedMenu: ', props.selectedMenu);
 const isClient = process.client;
 
 const menuData = computed(() => {

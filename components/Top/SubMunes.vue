@@ -6,66 +6,48 @@
       </div>
       <div class="header-search">
 
-        <!-- <TopMenuItem  v-for="menu in menuDate" :key="menu.path" :menuitem="menu" @showMenu="handleShowMenu(menu)" @closeMenu="closeMenuModel"/> -->
-
-        <!-- <el-menu
-          :ellipsis="false"
-          class="el-menu-popper-demo"
-          mode="horizontal"
-          :popper-offset="1"
-          :ellipsis-limit="5"
-        >
-          <template v-for="menu in menuDate" :key="menu.path">
-            <template v-if="menu.children">
-              <el-sub-menu :index="menu.path" @open="handleShowMenu(menu)">
-                <template #title>{{ menu.seoMeta?.title || '' }}</template>
-                <el-menu-item index="2-1">
-                  {{ menu.seoMeta?.title || '' }}
-                  <div id="subMenuModals" class="sub-menus"></div>
-                </el-menu-item>
-              </el-sub-menu>
+        <template v-for="menu in menuDate" :key="menu.name">
+        <!-- 一级菜单下有子菜单 -->
+          <el-popover
+            v-if="menu?.children?.length"
+            :popper-style="{width: 'auto',left: '120px',right: '120px', display: 'block'}"
+            :show-arrow="false"
+            placement="bottom"
+            trigger="hover"
+            :menuitem="menu"
+            @show="handleShowMenu(menu)"
+          >
+            <template #reference>
+              <!-- 一级菜单项 -->
+              <div class="flex items-center justify-between mr-[27px]">
+                <el-button link>{{ menu.seoMeta?.title || '' }}</el-button>
+                <el-icon class="el-icon--right" v-if="menu.children">
+                  <ArrowDown />
+                </el-icon>
+              </div>
             </template>
-            <template v-else>
-              <el-menu-item :index="menu.path">
-                {{ menu.seoMeta?.title || '' }}
-              </el-menu-item>
-            </template>
-          </template>
-        </el-menu> -->
+            <!-- 二级菜单项 -->
+            <TopMenuItemModals v-if="menuModel" @closeMenuModel="closeMenuModel" :selectedMenu="selected"/>
+          </el-popover>
 
-    <!-- 预留 路由菜单 传送目标 -->
-    <!-- <div id="subMenuModals" class="sub-menus"></div> -->
-    
-    <!-- 传送门路由菜单 -->
-    <!-- <TopMenuItemModals v-if="menuModel" @closeMenuModel="closeMenuModel" :selectedMenu="selected"/> -->
+          <!-- 一级菜单无子菜单，直接渲染链接 -->
+          <div v-else class="flex items-center justify-between mr-[27px]">
+            <nuxt-link
+              :to="menu.path" 
+              class="menu-link"
+              :class="{ 'active': isActive(menu.path) }"
+            >
+              <el-button link>{{ menu.seoMeta?.title || '' }}</el-button>
+            </nuxt-link>
+          </div>
+        </template>
 
-    <el-popover
-      :popper-style="{width: 'auto',left: '120px',right: '120px', display: 'block'}"
-      :show-arrow="false"
-      placement="bottom"
-      trigger="hover"
-      v-for="menu in menuDate" 
-      :key="menu.path" 
-      :menuitem="menu"
-      @show="handleShowMenu(menu)"
-    >
-      <template #reference>
-        <div class="flex items-center justify-between mr-[27px]">
-          <el-button type="text">{{ menu.seoMeta?.title || '' }}</el-button>
-          <el-icon class="el-icon--right" v-if="menu.children">
-            <ArrowDown />
-          </el-icon>
+
+        <div class="header-search—box">
+          <img class="header-search—img" :src="search">
         </div>
-      </template>
-      <!-- 自定义内容 -->
-      <TopMenuItemModals v-if="menuModel" @closeMenuModel="closeMenuModel" :selectedMenu="selected"/>
-    </el-popover>
-
-    <div class="header-search—box">
-      <img class="header-search—img" :src="search">
     </div>
   </div>
-</div>
 
   </div>
 </template>
@@ -77,11 +59,11 @@ import telInfo from '~/assets/images/tel-info.png';
 import { ArrowDown } from '@element-plus/icons-vue';
 
 // 导航菜单数据
-const { menuItems, findRouteInfo, } = useNavigation()
+const { menuItems } = useNavigation()
 const menuDate = computed(() => {
   return menuItems.filter(item => item.name !== 'Home');
 });
-console.log('menuDate: ', menuDate);
+console.log('所有路由,除了Home. menuDate: ', menuDate.value);
 
 // 当前选择
 const selected = ref(null);
@@ -91,7 +73,7 @@ const handleShowMenu = (selMenu) => {
   menuModel.value = true;
   selected.value = selMenu;
   console.log('menuModel.value: ', menuModel.value);
-  console.log('selected: ', selected);
+  console.log('所选一级路由 selected: ', selected);
 }
 // 监听 selected 的变化
 watch(selected, (newVal) => {
@@ -103,6 +85,11 @@ const closeMenuModel = () => {
   menuModel.value = false;
 }
 
+// 检查当前路由是否激活
+const isActive = (path) => {
+  // const fullPath = props.basePath ? `${props.basePath}/${path}` : path
+  // return route.path.startsWith(fullPath)
+}
 </script>
 
 <style lang='scss' scoped>
