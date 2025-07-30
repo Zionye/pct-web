@@ -16,7 +16,8 @@ import { storeToRefs } from 'pinia';
 import { useAppStore } from "~/stores/useAppStore";
 
 const appStore = useAppStore();
-appStore.setAffixHeight(310);
+// appStore.setAffixHeight(310);
+appStore.setAffixHeight(570);
 const { containerHeightPx } = storeToRefs(appStore); // 必须响应式绑定！
 </script>
 

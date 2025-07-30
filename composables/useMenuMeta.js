@@ -110,14 +110,38 @@ const MENU_ITEMS = [
         ],
       },
       {
-        path: "corporatereports",
-        name: "CorporateReports",
+        path: "corporatepoliciescertifications",
+        name: "CorporatePoliciesCertifications",
         seoMeta: {
-          title: "Corporate Reports",
+          title: "Corporate Policies & Certifications",
           parent: "About Us",
           icon: "",
           description: "",
         },
+        children: [
+          {
+            path: "corporatereports",
+            name: "CorporateReports",
+            seoMeta: {
+              title: "Corporate Reports",
+              parent: "Corporate Policies & Certifications",
+              root: "About Us",
+              icon: "CaretRight",
+              description: "",
+            },
+          },
+          {
+            path: "financialstatements",
+            name: "FinancialStatements",
+            seoMeta: {
+              title: "Financial Statements",
+              parent: "Corporate Policies & Certifications",
+              root: "About Us",
+              icon: "CaretRight",
+              description: "",
+            },
+          },
+        ],
       },
     ],
   },

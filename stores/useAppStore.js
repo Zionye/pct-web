@@ -24,7 +24,8 @@ export const useAppStore = defineStore("app", {
       this.bannerImgHeight = bannerImgHeight;
     },
     setBannerImg(bannerImg) {
-      this.bannerImg = new URL(bannerImg, import.meta.url).href;
+      // this.bannerImg = new URL(bannerImg, import.meta.url).href; // assets/images 文件下
+      this.bannerImg = bannerImg;
     },
   },
 });

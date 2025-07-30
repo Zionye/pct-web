@@ -2,7 +2,11 @@
   <div class="layout-default">
     <div class="layout-default__header">
       <TopSubTime />
-      <TopSubMunes />
+      <!-- <TopSubMunes /> -->
+
+      <AffixWrap>
+        <TopSubMunes />
+      </AffixWrap>
     </div>
 
     <!-- <slot /> -->
@@ -15,12 +19,9 @@
         <el-scrollbar view-class="content-view">
         <!-- <el-scrollbar view-class="content-view" height="400"> -->
           <el-main class="main">
-            <!-- <router-view v-slot="{ Component }">
-              <transition name="fade-transform" mode="out-in">
-                <component :is="Component" />
-              </transition>
-            </router-view> -->
-            <NuxtPage :transition="pageTransition" />
+            <Transition name="fade-transform" mode="out-in">
+              <slot />
+            </Transition>
           </el-main>
         </el-scrollbar>
       </div>
@@ -31,10 +32,7 @@
 </template>
 
 <script setup >
-const pageTransition = {
-  name: 'fade',
-  mode: 'out-in'
-}
+
 </script>
 
 <style lang="scss" scoped>
@@ -74,9 +72,9 @@ const pageTransition = {
         background-color: #f5f5f5;
         display: flex;
         flex-direction: column;
-
         flex: 1;
         height: auto;
+        padding: 16px 50px;
       }
     }
   }

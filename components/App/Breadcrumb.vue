@@ -21,7 +21,7 @@
 </template>
 
 <script setup>
-import { ArrowDown } from '@element-plus/icons-vue';
+import { ArrowRightBold } from '@element-plus/icons-vue';
 import { useRoute } from 'vue-router';
 
 const route = useRoute();
@@ -94,6 +94,7 @@ if (process.server) {
 
 <style scoped>
 .breadcrumb {
+  background: #ffffff;
 
   .current-page {
     font-weight: bold;

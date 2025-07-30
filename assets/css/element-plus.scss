@@ -4,6 +4,12 @@
   height: inherit;
 }
 
+.el-pagination.is-background .el-pager li:not(.is-disabled).is-active {
+  color: rgba(9, 70, 153, 1);
+  background: #ffffff;
+  border: 1px solid #094699;
+}
+
 .pct-table {
 
   .el-table {
