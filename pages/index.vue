@@ -21,19 +21,22 @@
       <AisApp />
     </SwiperSlide>
     <SwiperSlide class="screen ">
-      <News />
+      <div class="w-screen">
+        <News />
+        <BottomFooder />
+      </div>
     </SwiperSlide>
-    <SwiperSlide class="screen ">
+    <!-- <SwiperSlide class="screen ">
       <div class="footer-bg__img">
         <div class="bg-cont">
           <h1>COSCO SHIPPING PORTS</h1>
           <h1>Piraeus Container Terminal Single Member S.A</h1>
         </div>
       </div>
-    </SwiperSlide>
-    <SwiperSlide class="screen ">
+    </SwiperSlide> -->
+    <!-- <SwiperSlide class="screen ">
       <BottomFooder />
-    </SwiperSlide>
+    </SwiperSlide> -->
   </Swiper>
 </template>
 
@@ -76,7 +79,7 @@ const onSlideChange = (swiper) => {
     }
   }
 }
-.footer-box{
+/* .footer-box{
   height: 100%;
-}
+} */
 </style>

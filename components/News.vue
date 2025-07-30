@@ -64,9 +64,10 @@ import { reactive, toRefs, ref } from 'vue'
 
     .tit-box{
       width: 30%;
+      padding-top: 20px;
 
       .txt-warp{
-        min-height: 96px;
+        min-height: 86px;
       }
 
       .ellipsis-lines {
