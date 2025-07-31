@@ -160,7 +160,7 @@ watch(selectedYear, (newYear) => {
   .year-p{
     font-size: 20px;
     color: #094699;
-    padding-bottom: 90px;
+    /* padding-bottom: 90px; */
   }
 
 }

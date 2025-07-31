@@ -102,7 +102,7 @@ if (process.server) {
   }
 
   .el-breadcrumb{
-    padding: 14px 50px;
+    padding: 14px 100px;
     font-size: 14px;
     color: rgba(153, 153, 153, 1);
   }

@@ -51,7 +51,7 @@
   &__content{
     @apply flex flex-wrap;
     gap: 27px;
-    margin-bottom: 60px;
+    /* margin-bottom: 60px; */
   }
   &__card{
     width: calc((100% - 27px * 3) / 4);

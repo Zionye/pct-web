@@ -12,73 +12,206 @@
 
 .pct-table {
 
-  .el-table {
-    --el-table-border-color: transparent;
-    border: 1px solid #dddddd;
+  // 表头样式
+  .el-table__header-wrapper {
+    .el-table__header {
+      th {
+        background-color: rgba(60, 194, 239, 1);
+        color: white;
+        padding: 19px 0; // 上下间距19px
+        font-size: 14px;  // 表头字体14px
+        
+        // 排序图标颜色
+        // .sort-caret {
+        //   color: white;
+        // }
 
-    &::before {
-      display: none !important;
-    }
-  
-    th.el-table__cell.is-leaf {
-      color: #222222;
-      background: #fafafa;
-      border-bottom-color: #dddddd;
-    }
-  
-    th.is-leaf:not(:last-child) .cell {
-      position: relative;
-      &::after {
-        content: '';
-        position: absolute;
-        top: 0;
-        height: 100%;
-        width: 1px;
-        right: 0px;
-        background: #dddddd;
+        // .cell {
+        //   font-size: 14px; // 确保表头内容字体大小
+          
+        //   // 排序图标
+        //   .sort-caret.ascending,
+        //   .sort-caret.descending {
+        //     color: white;
+        //     border-bottom-color: white;
+        //   }
+          
+        //   .sort-caret.is-active {
+        //     color: white;
+        //     border-bottom-color: white;
+        //   }
+        // }
+        
+        .cell {
+          .el-table__column-sorters {
+            color: white !important;
+
+            // 处理 SVG 图标
+            .el-icon {
+              color: white !important;
+              
+              &.arrow-up {
+                &::before {
+                  color: white !important;
+                  border-bottom-color: white !important;
+                }
+              }
+              
+              &.arrow-down {
+                &::before {
+                  color: white !important;
+                  border-top-color: white !important;
+                }
+              }
+            }
+
+            // 处理传统边框图标
+            .sort-caret {
+              &.ascending {
+                border-bottom-color: white !important;
+              }
+              
+              &.descending {
+                border-top-color: white !important;
+              }
+            }
+
+            // 激活状态
+            &.is-active {
+              color: white !important;
+              
+              .el-icon {
+                color: white !important;
+              }
+              
+              .sort-caret {
+                &.ascending {
+                  border-bottom-color: white !important;
+                }
+                
+                &.descending {
+                  border-top-color: white !important;
+                }
+              }
+            }
+          }
+        }
+
+        
+        // 表头单元格悬停效果
+        &:hover {
+          background-color: rgba(60, 194, 239, 0.9);
+        }
       }
     }
-
-    .el-table__column-resize-proxy {
-      --el-table-border: 1px solid #ebeef5;
-    }
-
-    .el-table__cell {
-      padding: 14px 0 13px;
-    }
-
-    .cell {
-      line-height: 20px;
-    }
   }
+    
+  // 表格内容样式
+  .el-table__body-wrapper {
+    font-size: 13px;  // 表体字体13px
 
-  .el-pagination {
-    margin-top: 18px;
-  }
-
-  .el-button + .confirm-button {
-    margin-left: 10px;
-  }
-  .confirm-button + .el-button {
-    margin-left: 10px;
-  }
-
-  .el-button--text {
-    padding: 0;
-    position: relative;
-    line-height: 20px;
-    height: 20px;
-    border: none;
-    vertical-align: bottom;
-    &::after {
-      content: '';
-      position: absolute;
-      top: -8px;
-      bottom: -8px;
-      left: -8px;
-      right: -8px;
+    .el-table__body {
+      // 偶数行背景色
+      tr.el-table__row:nth-child(even) {
+        td {
+          background-color: #F5F9FE;
+        }
+      }
+      
+      // 所有行单元格上下间距
+      tr.el-table__row {
+        td {
+          padding: 19px 0; // 上下间距19px
+          font-size: 13px;  // 确保单元格字体大小
+            
+          .cell {
+            font-size: 13px; // 确保单元格内容字体大小
+          }
+        }
+      }
     }
   }
+    
+  // 边框样式调整
+  &.el-table--border {
+    border: 1px solid #EBEEF5;
+    
+    th, td {
+      border-right: 1px solid #EBEEF5;
+    }
+    
+    &:after {
+      background-color: #EBEEF5;
+    }
+  }
+  
+  // .el-table {
+  //   --el-table-border-color: transparent;
+  //   border: 1px solid #dddddd;
+
+  //   &::before {
+  //     display: none !important;
+  //   }
+  
+  //   th.el-table__cell.is-leaf {
+  //     color: #222222;
+  //     background: #fafafa;
+  //     border-bottom-color: #dddddd;
+  //   }
+  
+  //   th.is-leaf:not(:last-child) .cell {
+  //     position: relative;
+  //     &::after {
+  //       content: '';
+  //       position: absolute;
+  //       top: 0;
+  //       height: 100%;
+  //       width: 1px;
+  //       right: 0px;
+  //       background: #dddddd;
+  //     }
+  //   }
+
+  //   .el-table__column-resize-proxy {
+  //     --el-table-border: 1px solid #ebeef5;
+  //   }
+
+  //   .el-table__cell {
+  //     padding: 14px 0 13px;
+  //   }
+
+  //   .cell {
+  //     line-height: 20px;
+  //   }
+  // }
+
+  // .el-pagination {
+  //   margin-top: 18px;
+  // }
+
+  // .el-button + .confirm-button {
+  //   margin-left: 10px;
+  // }
+  // .confirm-button + .el-button {
+  //   margin-left: 10px;
+  // }
+
+  // .el-button--text {
+  //   padding: 0;
+  //   position: relative;
+  //   line-height: 20px;
+  //   height: 20px;
+  //   border: none;
+  //   vertical-align: bottom;
+  //   &::after {
+  //     content: '';
+  //     position: absolute;
+  //     top: -8px;
+  //     bottom: -8px;
+  //     left: -8px;
+  //     right: -8px;
+  //   }
+  // }
 }
 
 .table-toolbar {

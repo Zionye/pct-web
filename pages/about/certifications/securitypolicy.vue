@@ -23,7 +23,7 @@ const handleClick = (item) => {
 
 <style lang="scss" scoped>
 .security-policy{
-  padding-bottom: 54px;
+  /* padding-bottom: 54px; */
 
   &__content{
     @apply flex flex-wrap;

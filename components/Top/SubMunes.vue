@@ -111,7 +111,7 @@ const isActive = (path) => {
     align-items: center;
     justify-content: space-between;
     height: $top-submenus-height;
-    padding: 0 40px;
+    padding: 0 80px;
     background: #ffffff;
     box-shadow: 0px 1px 0px 0px rgba(0,0,0,0.06);
     &-img {

@@ -18,7 +18,7 @@
 <style lang='scss' scoped>
 .l-header{
   height: $top-subtime-height;
-  padding: 0px 45px;
+  padding: 0px 80px;
   display: flex;
   align-items: center;
   background: #ffffff;

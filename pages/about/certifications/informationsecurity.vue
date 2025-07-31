@@ -16,7 +16,7 @@
 
 <style lang="scss" scoped>
 .information-security{
-  padding-bottom: 54px;
+  /* padding-bottom: 54px; */
 
   &__content{
     @apply flex flex-wrap;

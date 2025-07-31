@@ -74,7 +74,7 @@
         flex-direction: column;
         flex: 1;
         height: auto;
-        padding: 16px 50px;
+        padding: 16px 100px 70px;
       }
     }
   }

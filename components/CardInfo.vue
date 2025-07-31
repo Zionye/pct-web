@@ -4,11 +4,13 @@
       <slot />
       <p class="card-box__title">{{ title }}</p>
       <div class="card-box__date">
-        <p>{{ date }}</p>
-        <div class="read-more">
-          <p>Read More</p>
-          <el-icon><Right /></el-icon>
-        </div>
+        <slot name="footer">
+          <p>{{ date }}</p>
+          <div class="read-more">
+            <p>Read More</p>
+            <el-icon><Right /></el-icon>
+          </div>
+        </slot>
       </div>
     </div>
   </div>
