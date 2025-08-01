@@ -10,7 +10,6 @@
 </template>
 
 <script setup >
-
 import bgIntermodal from '~/assets/images/bg-intermodal.png';
 
 </script>

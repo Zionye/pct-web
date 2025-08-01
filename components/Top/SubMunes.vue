@@ -2,7 +2,9 @@
   <div class="hear-wrap">
     <div class="header">
       <div>
-        <img class="header-img" :src="logoh" />
+        <nuxt-link to="/">
+          <img class="header-img" :src="logoh" />
+        </nuxt-link>
       </div>
       <div class="header-search">
 

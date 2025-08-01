@@ -145,27 +145,4 @@ const toggleSubMenu = (path) => {
       width: 100%;
     }
   }
-/* .menu-item {
-  @apply py-1;
-}
-
-.menu-link {
-  @apply flex items-center px-3 py-2 rounded hover:bg-gray-100;
-  &.active {
-    @apply text-blue-600 bg-blue-50;
-  }
-}
-
-.submenu-trigger {
-  @apply flex items-center justify-between px-3 py-2 cursor-pointer hover:bg-gray-100;
-}
-
-.submenu-content {
-  @apply pl-4 border-l-2 border-gray-200;
-}
-
-.rotate-180 {
-  transform: rotate(180deg);
-  transition: transform 0.2s;
-} */
 </style>

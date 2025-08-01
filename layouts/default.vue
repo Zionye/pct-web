@@ -69,7 +69,7 @@
       }
 
       .main {
-        background-color: #f5f5f5;
+        background-color: #ffffff;
         display: flex;
         flex-direction: column;
         flex: 1;

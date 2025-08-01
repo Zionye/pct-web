@@ -347,7 +347,7 @@ const MENU_ITEMS = [
             name: "AuthorizationTemplateForReceipt",
             seoMeta: {
               title:
-                "Authorization Template for receipt of cargo container from PCT S.A.",
+                "Authorization Template for receipt of cargo / container from PCT S.A.",
               parent: "Customs & VAT Regime",
               root: "Terminal",
               icon: "CaretRight",
@@ -547,28 +547,28 @@ const MENU_ITEMS = [
 export const useNavigation = () => {
   const menuItems = MENU_ITEMS;
 
-  // 查找当前路由的完整路径信息（用于面包屑）
-  const findRouteInfo = (path, items = menuItems) => {
-    for (const item of items) {
-      if (item.path === path) return [item];
-      if (item.children) {
-        const found = findRouteInfo(path, item.children);
-        if (found) return [item, ...found];
-      }
-    }
-    return null;
-  };
+  // // 查找当前路由的完整路径信息（用于面包屑）
+  // const findRouteInfo = (path, items = menuItems) => {
+  //   for (const item of items) {
+  //     if (item.path === path) return [item];
+  //     if (item.children) {
+  //       const found = findRouteInfo(path, item.children);
+  //       if (found) return [item, ...found];
+  //     }
+  //   }
+  //   return null;
+  // };
 
-  // 在菜单中查找匹配的项
-  const findMenuItem = (menuItems, path) => {
-    return menuItems.find((item) => {
-      const itemPath = item.path.split("/").pop(); // 获取路径的最后一段
-      return itemPath === path;
-    });
-  };
+  // // 在菜单中查找匹配的项
+  // const findMenuItem = (menuItems, path) => {
+  //   return menuItems.find((item) => {
+  //     const itemPath = item.path.split("/").pop(); // 获取路径的最后一段
+  //     return itemPath === path;
+  //   });
+  // };
 
   return {
     menuItems,
-    findRouteInfo,
+    // findRouteInfo,
   };
 };

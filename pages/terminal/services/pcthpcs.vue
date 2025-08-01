@@ -198,7 +198,7 @@ const epikoinonias = [
         color: #094699;
         border: 1px solid #094699 !important;
         background-color: white !important;
-        z-index: 1;
+        z-index: 0;
       }
     }
   }

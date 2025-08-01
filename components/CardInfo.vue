@@ -6,12 +6,13 @@
       <div class="card-box__date">
         <slot name="footer">
           <p>{{ date }}</p>
-          <div class="read-more">
+          <div class="read-more" v-if="isReadMore">
             <p>Read More</p>
             <el-icon><Right /></el-icon>
           </div>
         </slot>
       </div>
+      <slot name="extraIntro"></slot>
     </div>
   </div>
 </template>
@@ -34,6 +35,10 @@ const props = defineProps({
   isActive: {
     type: Boolean,
     default: false
+  },
+  isReadMore: {
+    type: Boolean,
+    default: true
   }
 });
 
