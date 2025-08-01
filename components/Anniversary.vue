@@ -29,7 +29,6 @@ import pctYear from '~/assets/images/pct-year.png';
 
 const activeName = ref('first');
 const handleTabClick = (tab, event) => {
-  console.log('tab, event: ', tab, event);
 }
 
 const longTerm = ref('');

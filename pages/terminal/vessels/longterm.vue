@@ -186,7 +186,6 @@ const formInline = reactive({
 })
 
 const onSubmit = () => {
-  console.log('submit!')
 }
 </script>
 

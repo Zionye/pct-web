@@ -64,8 +64,6 @@ const selectedYear = ref(years[0].value); // 默认选择第一个年份
 // const yearOptions = ref(years.map(year => ({ value: year.value, label: year.label })));
 // 监听年份选择变化
 watch(selectedYear, (newYear) => {
-  console.log('Selected year changed to:', newYear);
-  // 在这里可以添加逻辑来处理年份变化，比如加载对应年份的历史数据
 });
 </script>
 

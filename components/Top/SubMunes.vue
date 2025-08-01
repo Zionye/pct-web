@@ -65,22 +65,18 @@ const { menuItems } = useNavigation()
 const menuDate = computed(() => {
   return menuItems.filter(item => item.name !== 'Home');
 });
-console.log('所有路由,除了Home. menuDate: ', menuDate.value);
 
 // 当前选择
 const selected = ref(null);
 const menuModel = ref(false);
 const handleShowMenu = (selMenu) => {
-  console.log('show: ', selMenu);
   menuModel.value = true;
   selected.value = selMenu;
-  console.log('menuModel.value: ', menuModel.value);
-  console.log('所选一级路由 selected: ', selected);
 }
 // 监听 selected 的变化
 watch(selected, (newVal) => {
   if (newVal) {
-    console.log('newVal: ', newVal);
+    // console.log('newVal: ', newVal);
   }
 })
 const closeMenuModel = () => {

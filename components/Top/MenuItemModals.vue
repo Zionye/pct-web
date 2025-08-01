@@ -25,7 +25,7 @@ const props = defineProps({
     default: () => ({})
   }
 });
-console.log('所选一级路由 selectedMenu: ', props.selectedMenu);
+
 const isClient = process.client;
 
 const menuData = computed(() => {

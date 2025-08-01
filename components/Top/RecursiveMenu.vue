@@ -73,8 +73,6 @@ const processedMenuData = computed(() => {
     fullPath: props.basePath ? `${props.basePath}/${item.path}` : `/${item.path}`
   }));
 });
-console.log('路由面板 props.menuData: ', props.menuData);
-console.log('processedMenuData: ', processedMenuData);
 
 // 创建icon图标映射方法
 const getIconComponent = (iconName) => {
@@ -85,7 +83,6 @@ const getIconComponent = (iconName) => {
 }
 
 const menuData = computed(() => props.menuData);
-console.log('menuData: 11', menuData);
 const route = useRoute()
 const openedMenus = ref([]);
 // 检查当前路由是否激活

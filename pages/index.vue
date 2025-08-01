@@ -48,7 +48,7 @@ definePageMeta({
 import { Swiper, SwiperSlide } from 'swiper/vue'
 
 const onSlideChange = (swiper) => {
-  console.log('当前页', swiper.activeIndex)
+  // console.log('当前页', swiper.activeIndex)
 }
 </script>
 

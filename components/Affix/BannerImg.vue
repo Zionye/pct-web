@@ -38,7 +38,7 @@ watch(
   (newName) => {
     if (newName) {
       initBanner();
-      console.log('breadcrumbItems: -->this!!!', breadcrumbItems);
+      console.log('breadcrumbItems: ', breadcrumbItems);
     }
   }
 )
